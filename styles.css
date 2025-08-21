@@ -1,0 +1,301 @@
+/* ============= CSS Base ============= */
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --brand: #111111;
+  --radius: 999px;
+  --maxw: 1440px;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--text);
+  background:var(--bg);
+  font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Thai", sans-serif;
+}
+
+/* ============= Utility Bar ============= */
+.util{
+  background: #f5f5f5;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid #e5e5e5; /* ✅ เพิ่มเส้นล่างให้ชัดแบบ Nike */
+  padding: 6px ; /* ✅ เพิ่มความสูงให้ดูโปรเหมือน Nike */
+}
+.util__container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.util__nav a{
+  color: #111;
+  text-decoration: none;
+  margin: 0 8px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.util__nav a:hover{ text-decoration: underline; }
+.util__sep{ opacity:.5; }
+
+/* ============= Header ============= */
+.header{
+ position:sticky;
+  top:0;
+  z-index:50;
+  background:#fff;                 /* แถบขาว */
+  border-top:1px solid #e6e6e6;    /* เส้นคั่นบนบาง ๆ */
+  border-bottom:1px solid #e6e6e6; /* เส้นคั่นล่างบาง ๆ */
+}
+.header__container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2px 12px; /* ลด padding ให้ header เตี้ยลงอีก */
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  background: #fff; /* ตั้งพื้นหลัง header เป็นสีขาว */
+}
+.brand{ display:inline-flex; align-items:center; }
+.brand__logo{ height: 80px; width:auto; display:block; }
+
+/* Primary Nav */
+.primary__list{
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.primary__link{
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 4px;
+  border-radius: 8px;
+}
+.primary__link:hover{ background:#f3f4f6; }
+
+/* Header Actions */
+.actions{
+  /* ปุ่ม action ทั้งหมด (search, favorite, bag) อยู่แถวเดียวกันและชิดกัน */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0; /* ไม่มีช่องว่างระหว่างปุ่ม */
+}
+.icon-btn{
+  /* ปุ่มไอคอน (favorite, bag) ขนาดเท่ากันและอยู่แถวเดียวกับ search */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border: none; /* ลบเส้นกรอบ */
+  outline: none; /* ลบเส้นโฟกัสเวลาเลือกปุ่ม */
+  height: 44px; /* กำหนดความสูงให้เท่ากับปุ่ม search */
+  min-width: 44px; /* กำหนดความกว้างขั้นต่ำให้เท่ากัน */
+}
+.icon-btn:hover{ background:#f9fafb; }
+
+
+/* Search */
+.search{
+  display:flex;
+  margin: 0; /* ✅ ลบระยะรอบ search */
+  padding: 0;
+}
+.search__input{
+  border:0;
+  padding: 8px 12px 8px 14px;
+  width: 180px;
+  background: transparent;
+  outline: none;
+}
+.search__btn{
+    
+  /* ปุ่ม search icon ขนาดเท่ากับปุ่มอื่น ๆ และอยู่แถวเดียวกัน */
+  border: 0;
+  background: transparent;
+  padding: 4px 8px;
+  cursor: pointer;
+  height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ============= Promo Strip ============= */
+.promo{
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 16px;
+  color: var(--text);
+  background: #f7f7f7; /* ✅ สีเทาแบบ Nike */
+  font-size: 13px;
+  color: #111; /* ✅ ตัวอักษรเข้ม */
+  border-bottom: 1px solid #e5e5e5;
+  padding: 8px 0;
+}
+.promo__link{
+  color: #000000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.promo__link:hover{ text-decoration: underline; }
+
+/* ============= Hero ============= */
+.hero{
+  position: relative;
+  width: 100%;
+  /* อัตราส่วนภาพกว้าง:สูง ประมาณ 1770x768 ในตัวอย่าง */
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  background: #7f1d1d; /* เผื่อโหลดภาพช้า */
+}
+.hero__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 16/7;
+  background: #7f1d1d;
+}
+
+/* ============= Responsive ============= */
+@media (max-width: 1024px){
+  .header__container{
+    grid-template-columns: 120px 1fr;
+    grid-template-areas:
+      "brand actions"
+      "nav nav";
+  }
+  .brand{ grid-area: brand; }
+  .actions{ grid-area: actions; }
+  .primary__list{
+    grid-area: nav;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 6px;
+  }
+}
+
+@media (max-width: 640px){
+  .search__input{ width: 120px; }
+  .primary__list{ gap: 10px; }
+  .promo{ font-size: 13px; padding: 9px 12px; }
+  .hero{ aspect-ratio: 16/10; } /* สูงขึ้นเล็กน้อยสำหรับมือถือ */
+}
+
+/* ============= Search Overlay & Modal ============= */
+.search-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.98);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 48px;
+}
+.search-modal {
+  background: none;
+  width: 600px;
+  max-width: 95vw;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  padding: 24px 32px 32px 32px;
+}
+.search-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-modal__logo {
+  height: 32px;
+  vertical-align: middle;
+}
+.search-cancel {
+  float: right;
+  font-weight: bold;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #222;
+}
+.search-modal__form {
+  margin-top: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-modal__input {
+  width: 80%;
+  padding: 8px 32px 8px 32px;
+    object-fit: cover;
+    object-position: top;
+  border-radius: 24px;
+  border: 1px solid #eee;
+  outline: none;
+}
+.search-modal__icon {
+  position: absolute;
+  left: 12px;
+  font-size: 1.2rem;
+  color: #888;
+}
+.search-modal__popular {
+  margin-top: 32px;
+}
+.search-modal__popular-title {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.search-tag {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222;
+  cursor: pointer;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  transition: background 0.2s;
+}
+.search-tag:hover {
+  background: #e0e0e0;
+}
+
+/* รูปในปุ่ม favorite และ bag ขนาดเท่ากันกับ search icon */
+.icon-btn__img {
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+}
+
+/* รูป search icon ขนาดเท่ากับปุ่มอื่น ๆ */
+.search__icon-img{
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+}
