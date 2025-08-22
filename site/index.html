@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nike — Hero Clone</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body data-page="home">
+  <div class="page"><!-- ตัวครอบทั้งหน้า -->
+
+    <!-- includes -->
+    <div data-include="components/topbar.html"></div>
+    <div data-include="components/header.html"></div>
+    <div data-include="components/promo.html"></div>
+
+    <!-- คอนเทนต์หลัก -->
+    <main class="main">
+      <section class="hero" aria-label="แคมเปญรองเท้าวิ่งสีชมพู">
+        <video class="hero__media" src="assets/Adidas.mp4"
+               autoplay muted loop playsinline
+               poster="assets/hero-desktop.jpg"></video>
+      </section>
+
+      <!-- บล็อก VOMERO อยู่ใน main (ถูกที่) -->
+      <section class="split">
+        <div class="split__content">
+          <p class="split__subtitle">ยกระดับอีกขั้น</p>
+          <h1 class="split__title">VOMERO  PLUS</h1>
+        
+          <p class="split__desc">ลดแรงกระแทกได้มากขึ้น สบายมากขึ้น วิ่งได้มากขึ้น</p>
+          <div class="split__buttons">
+            <a href="#" class="btn btn-primary">เลือกซื้อ</a>
+            <a href="#" class="btn btn-secondary">ดูเพิ่มเติม</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="featured">
+  <h2 class="featured__title">สินค้าเด่น</h2>
+
+  <div class="featured__grid">
+    <!-- การ์ดซ้ายบน -->
+    <article class="card">
+      <img src="assets/G1.jpg" alt="จ่าฮุ้ง" class="card__img">
+      <div class="card__overlay">
+        <span class="card__eyebrow">จ่าฮุ้ง</span>
+        <a href="#" class="pill">เลือกซื้อ</a>
+      </div>
+    </article>
+
+    <!-- การ์ดขวาบน -->
+    <article class="card">
+      <img src="assets/g3.jpg" alt="ชวนเข้าชุมชนวิ่ง" class="card__img">
+      <div class="card__overlay">
+        <p class="card__copy">
+          รู้ให้มากเรื่องวิ่ง เตรียมตัวให้พร้อมแล้วค้นหาเส้นทาง<br>
+          จุดสตาร์ทของคุณ
+        </p>
+        <a href="#" class="pill">ดูเพิ่มเติม</a>
+      </div>
+    </article>
+
+    <!-- การ์ดซ้ายล่าง -->
+    <article class="card">
+      <img src="assets/g6.jpg" alt="Flex Runner" class="card__img">
+      <div class="card__overlay">
+        <span class="card__eyebrow">Flex Runner</span>
+        <a href="#" class="pill">เลือกซื้อ</a>
+      </div>
+    </article>
+
+    <!-- การ์ดขวาล่าง -->
+    <article class="card">
+      <img src="assets/g7.jpg" alt="Air Jordan 1 Mule" class="card__img">
+      <div class="card__overlay">
+        <span class="card__eyebrow">เสื้อยืดลายทาง Adicolor 3-Stripes</span>
+        <h3 class="card__title">ไม่พลาด</h3>
+        <a href="#" class="pill">เลือกซื้อ</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+    </main>
+
+    <!-- footer วางท้ายสุด -->
+    <div data-include="components/footer.html"></div>
+  </div>
+
+  <!-- scripts -->
+  <script src="js/include.js" defer></script>
+  <script src="js/active-link.js" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

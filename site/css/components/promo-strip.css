@@ -1,0 +1,66 @@
+/* ===== Promo base ===== */
+.promo{
+  position: relative;
+  overflow: hidden;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e5e5e5;
+  color: #111;
+  font-size: 15px;
+    height: 50px;           /* ความสูงคงที่ */
+  text-align: center;
+    padding: 6px 0;   
+}
+.promo strong{ font-weight:800; }
+.promo__link{ text-decoration: underline; font-weight:700; }
+
+/* เวทีแอนิเมชัน */
+.promo__stage{
+  position: relative;
+  height: 36px;
+}
+
+/* วางข้อความทับกัน แล้วสลับแสดงผล */
+.promo__text{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);   /* เริ่มกลางเวที */
+ line-height: 22px;         /* ✅ เพิ่มระยะห่างบรรทัด */
+  height: 50px;  
+  white-space: nowrap;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* เล่นคนละช่วงเวลา (รวมรอบ 8s) */
+.promo__text:nth-child(1){ animation-delay: 0s; }
+.promo__text:nth-child(2){ animation-delay: 4s; }
+
+/* เข้า/ออกจากขวา → ซ้าย */
+.slide-rtl{ animation: promo-rtl 8s infinite; }
+/* เข้า/ออกจากซ้าย → ขวา */
+.slide-ltr{ animation: promo-ltr 8s infinite; }
+
+/* เข้าจากขวา อยู่กลาง แล้วเลื่อนออกซ้าย */
+@keyframes promo-rtl{
+  0%   { opacity:0; transform: translateX(60%); }
+  10%  { opacity:1; transform: translateX(-50%); } /* เข้ากลาง */
+  40%  { opacity:1; transform: translateX(-50%); } /* ค้างแสดงผล */
+  50%  { opacity:0; transform: translateX(-160%);} /* ออกซ้าย */
+  100% { opacity:0; transform: translateX(-160%);} /* รอรอบถัดไป */
+}
+
+/* เข้าจากซ้าย อยู่กลาง แล้วเลื่อนออกขวา */
+@keyframes promo-ltr{
+  0%   { opacity:0; transform: translateX(-160%); }
+  10%  { opacity:1; transform: translateX(-50%); } /* เข้ากลาง */
+  40%  { opacity:1; transform: translateX(-50%); } /* ค้างแสดงผล */
+  50%  { opacity:0; transform: translateX(60%); }  /* ออกขวา */
+  100% { opacity:0; transform: translateX(60%); }  /* รอรอบถัดไป */
+}
+
+/* ผู้ใช้ที่ตั้งค่าลดแอนิเมชัน */
+@media (prefers-reduced-motion: reduce){
+  .promo__text{ animation: none !important; opacity: 1; }
+  .promo__text + .promo__text{ display: none; } /* แสดงข้อความแรกอย่างเดียว */
+}

@@ -1,0 +1,138 @@
+/* Section หลัก */
+.split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px 90px; /* ✅ เพิ่มระยะห่างจากด้านบน */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* เนื้อหาอยู่ตรงกลาง */
+.split__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 50px; /* ✅ เพิ่มระยะห่างทุกบรรทัดเท่ากัน */
+  max-width: 720px;
+}
+
+/* หัวข้อย่อย */
+.split__subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* หัวข้อหลัก */
+.split__title {
+  font-weight: 900;
+  font-size: clamp(70px, 9vw, 85px); /* ✅ ทำให้ใหญ่ใกล้เคียงภาพตัวอย่าง */
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* คำอธิบาย */
+.split__desc {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* ปุ่ม */
+.split__buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  border-radius: 99px;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ปุ่มหลัก และปุ่มรองให้เหมือนกัน */
+.btn-primary,
+.btn-secondary {
+  background: #111;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: #333;
+}
+
+/* สินค้าเด่น */
+/* ===== Featured ===== */
+.featured{ padding: 24px 20px 60px; }
+.featured__title{ max-width:1100px; margin:left 28px; font-size:24px; font-weight:800; }
+
+.featured__grid{
+  width: 100%;
+  max-width: none;           /* ✅ ยกเลิกการจำกัดความกว้าง 1100px */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;                    /* ✅ ไม่มีร่อง/ช่องว่างระหว่างการ์ด */
+}
+
+.card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;          /* ✅ ไม่มีขอบโค้ง */
+  background: transparent;   /* ✅ ไม่ให้เห็นพื้นเทา */
+  aspect-ratio: 18 / 20;     /* ✅ สูงขึ้นกว่าก่อน (ถ้ายังเตี้ย เพิ่มเป็น 4/3 ได้) */
+}
+.card__img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition: transform .5s ease;
+}
+.card:hover .card__img{ transform: scale(1.03); }
+
+/* overlay ด้านใน */
+.card__overlay{
+  position:absolute; inset:auto 0 14px 14px;  /* bottom-left */
+  display:flex; flex-direction:column; gap:10px; max-width:75%;
+  color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.card__eyebrow{ font-weight:800; font-size:14px; }
+.card__copy{ margin:0; line-height:1.35; font-weight:700; }
+.card__title{ margin:0; font-size:16px; font-weight:800; }
+
+/* ปุ่มกลมแบบเม็ด (pill) */
+.pill{
+  align-self:flex-start;
+  display:inline-flex; align-items:center; justify-content:center;
+  height:40px; padding:0 18px; border-radius:999px;
+  background:#fff; color:#111; font-weight:800; text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(0,0,0,.12);
+  transition: transform .15s ease, background .2s ease;
+}
+.pill:hover{ transform: translateY(-1px); background:#f5f5f5; }
+
+/* ดาร์กพื้นหลังอ่านง่ายขึ้น (เฉพาะใบที่ตัวหนังสือยาว) */
+.card:nth-child(2) .card__overlay,
+.card:nth-child(4) .card__overlay{
+  text-shadow:0 3px 14px rgba(0,0,0,.5);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .featured__grid{ grid-template-columns: 1fr; }
+  .card__overlay{ max-width: 88%; inset:auto 0 12px 12px; }
+}

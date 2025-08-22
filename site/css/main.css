@@ -1,0 +1,26 @@
+/* รวมทุกไฟล์ CSS ด้วย @import */
+@import url('./base/reset.css');
+@import url('./base/tokens.css');
+@import url('./base/typography.css');
+@import url('./layout/container.css');
+@import url('./components/topbar.css');
+@import url('./components/header.css');
+@import url('./components/promo-strip.css');
+@import url('./components/hero.css');
+@import url('./utilities/helpers.css');
+@import url('./pages/home.css');
+/* ลำดับ base → layout → components → utilities → pages */
+@import url("base/reset.css");
+@import url("base/tokens.css");
+@import url("base/typography.css");
+
+@import url("layout/container.css");
+
+@import url("components/topbar.css");
+@import url("components/header.css");
+@import url("components/promo-strip.css");
+@import url("components/hero.css");
+
+@import url("utilities/helpers.css");
+
+@import url("pages/home.css");

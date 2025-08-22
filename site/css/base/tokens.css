@@ -1,0 +1,26 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --maxw: 1440px;
+  --r-pill: 999px;
+}
+body {
+  color: var(--text);
+  background: var(--bg);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Thai", sans-serif;
+}
+:root{
+  --bg:#ffffff;
+  --text:#111111;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --maxw:1440px;
+  --r-pill:999px;
+}
+body{
+  color:var(--text);
+  background:var(--bg);
+  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans Thai",sans-serif;
+}
