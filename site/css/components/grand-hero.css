@@ -1,0 +1,115 @@
+/* Grand Slam Hero Section */
+.grand-hero {
+  width: 100vw;
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+.grand-hero__bg {
+  width: 100vw;
+  min-width: 100vw;
+  min-height: 95vh;
+  height: 95vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../../assets/blackpink.webp') center center/cover no-repeat;
+}
+.grand-hero__overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+.grand-hero__content {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 48px 16px;
+}
+
+.grand-hero__content--bottom {
+  top: auto;
+  bottom: 32px;
+  transform: translateX(-50%);
+}
+.grand-hero__title {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+.grand-hero__desc {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 28px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.grand-hero__btn {
+  background: #fff;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 32px;
+  border-radius: 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.grand-hero__btn:hover {
+  background: #f5f5f5;
+}
+@media (max-width: 700px) {
+  .grand-hero__title { font-size: 2.2rem; }
+  .grand-hero__content { padding: 32px 4px; }
+}
+
+@media (max-width: 480px) {
+  .grand-hero {
+    min-height: 48vh;
+  }
+  .grand-hero__bg {
+    min-height: 56vh;
+    height: 56vh;
+    background-position: center top;
+  }
+  .grand-hero__content {
+    padding: 18px 2px;
+  }
+  .grand-hero__title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .grand-hero__desc {
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+  }
+  .grand-hero__btn {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .grand-hero__title {
+    font-size: 1.05rem;
+  }
+  .grand-hero__desc {
+    font-size: 0.82rem;
+  }
+  .grand-hero__btn {
+    font-size: 0.82rem;
+    padding: 6px 10px;
+  }
+}

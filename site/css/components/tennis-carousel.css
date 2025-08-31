@@ -1,0 +1,213 @@
+/* Tennis Product Carousel */
+.tennis-carousel {
+  margin: 64px auto 0 auto;
+  max-width: 1800px;
+  padding: 0 32px;
+}
+.tennis-carousel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.tennis-carousel__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .tennis-carousel__title {
+    font-size: 1.3rem;
+  }
+  .tennis-carousel__name {
+    font-size: 1rem;
+  }
+  .tennis-carousel__desc {
+    font-size: 0.92rem;
+  }
+  .tennis-carousel__price {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .tennis-carousel__header {
+    position: relative;
+  }
+  .tennis-carousel__actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    gap: 8px;
+  }
+  .tennis-carousel__all {
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .tennis-carousel__actions {
+    justify-content: flex-end;
+  }
+  .tennis-carousel__all {
+    margin-left: auto;
+  }
+  .tennis-carousel__title {
+    font-size: 1.05rem;
+  }
+  .tennis-carousel__name {
+    font-size: 0.92rem;
+  }
+  .tennis-carousel__desc {
+    font-size: 0.82rem;
+  }
+  .tennis-carousel__price {
+    font-size: 0.92rem;
+  }
+}
+}
+.tennis-carousel__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tennis-carousel__all {
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
+  margin-right: 8px;
+}
+.tennis-carousel__arrow {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tennis-carousel__arrow:hover {
+  background: #f5f5f5;
+}
+.tennis-carousel__track {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+}
+.tennis-carousel__item {
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  min-width: 370px;
+  max-width: 420px;
+  flex: 0 0 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.tennis-carousel__item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  background: #eee;
+}
+.tennis-carousel__info {
+  padding: 18px 18px 12px 18px;
+}
+.tennis-carousel__name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.tennis-carousel__desc {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.tennis-carousel__price {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+}
+@media (max-width: 900px) {
+  .tennis-carousel__item, .tennis-carousel__item img {
+    min-width: 220px;
+    max-width: 260px;
+  }
+  .tennis-carousel {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tennis-carousel {
+    margin-top: 32px;
+    padding: 0 2px;
+  }
+  .tennis-carousel__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .tennis-carousel__title {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .tennis-carousel__actions {
+    gap: 8px;
+  }
+  .tennis-carousel__arrow {
+    width: 26px;
+    height: 26px;
+    font-size: 1.1rem;
+  }
+  .tennis-carousel__item, .tennis-carousel__item img {
+    min-width: 120px;
+    max-width: 150px;
+    border-radius: 8px;
+  }
+  .tennis-carousel__info {
+    padding: 10px 8px 8px 8px;
+  }
+  .tennis-carousel__desc {
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+  }
+  .tennis-carousel__price {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .tennis-carousel__title {
+    font-size: 0.92rem;
+    margin-bottom: 2px;
+  }
+  .tennis-carousel__arrow {
+    width: 18px;
+    height: 18px;
+    font-size: 0.9rem;
+  }
+  .tennis-carousel__item, .tennis-carousel__item img {
+    min-width: 80px;
+    max-width: 100px;
+    border-radius: 5px;
+  }
+  .tennis-carousel__info {
+    padding: 6px 2px 4px 2px;
+  }
+  .tennis-carousel__desc {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+  .tennis-carousel__price {
+    font-size: 0.82rem;
+  }
+}
+}

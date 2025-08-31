@@ -1,3 +1,5 @@
+@import url('./components/icon-carousel.css');
+@import url('./components/tennis-carousel.css');
 /* รวมทุกไฟล์ CSS ด้วย @import */
 @import url('./base/reset.css');
 @import url('./base/tokens.css');
@@ -7,6 +9,7 @@
 @import url('./components/header.css');
 @import url('./components/promo-strip.css');
 @import url('./components/hero.css');
+@import url('./components/grand-hero.css');
 @import url('./utilities/helpers.css');
 @import url('./pages/home.css');
 /* ลำดับ base → layout → components → utilities → pages */
@@ -24,3 +27,4 @@
 @import url("utilities/helpers.css");
 
 @import url("pages/home.css");
+@import url('components/custom-carousel.css');

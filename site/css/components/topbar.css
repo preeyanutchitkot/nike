@@ -1,3 +1,6 @@
+
+
+
 /* แถบบน */
 .util{
   background:#f5f5f5;
@@ -43,3 +46,34 @@
 .util__nav a{ color:#111; font-weight:700; text-decoration:none; }
 .util__nav a:hover{ text-decoration:underline; }
 .util__sep{ opacity:.5; }
+
+@media (max-width: 600px) {
+  .util {
+    font-size: 11px;
+  }
+  .util__container {
+    padding: 3px 0;
+  }
+  .util__logo {
+    height: 16px;
+    padding-left: 16px;
+  }
+  .util__nav {
+    gap: 6px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .util {
+    font-size: 9.5px;
+  }
+  .util__logo {
+    height: 12px;
+    padding-left: 4px;
+  }
+  .util__nav {
+    gap: 3px;
+    padding-right: 2px;
+  }
+}

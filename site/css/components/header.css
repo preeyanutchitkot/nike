@@ -56,12 +56,12 @@
 
 /* ===================== Search (อยู่ใน .actions) ===================== */
 :root{
-  --search-w: 280px;     /* ความกว้างกรอบค้นหา */
+  --search-w: 380px;     /* ความกว้างกรอบค้นหา (ขยายขึ้น) */
   --search-h: 40px;      /* ความสูง input */
-  --search-icon: 18px;   /* ขนาดไอคอนแว่น */
-  --search-left: 12px;   /* ระยะไอคอนจากขอบซ้ายของ input */
+  --search-icon: 25px;   /* ขนาดไอคอนแว่น (เล็กลง) */
+  --search-left: 15px;   /* ระยะไอคอนจากขอบซ้ายของ input (ขยับเข้าในกรอบ) */
   --search-pad-x: 14px;  /* padding ขวา/ทั่วไปของ input */
-  --search-pad-l: 42px;  /* padding ซ้ายของ input (ต้อง > --search-left) */
+  --search-pad-l: 54px;  /* padding ซ้ายของ input (เพิ่มให้ placeholder ไม่ทับไอคอน) */
 }
 
 /* กรอบค้นหาเป็นจุดอ้างอิงของไอคอน และดัน input ไปชิดขวา */
@@ -74,7 +74,7 @@
 
 /* เงื่อนไขตามที่ต้องการ: input กว้าง 50% ของกรอบ .search */
 .actions .search .search__input{
-  width: 50%;
+  width: 100%;
   height: var(--search-h);
   padding: 8px var(--search-pad-x) 8px var(--search-pad-l);
   border-radius: 999px;
@@ -96,8 +96,9 @@
 /* ไอคอนแว่นให้อยู่ “ในช่อง” ฝั่งซ้ายของ input ที่ชิดขวา */
 .actions .search .search__btn{
   position: absolute;
-  top: 50%; transform: translateY(-50%);
-  left: calc(50% + var(--search-left));      /* ⬅ เคลื่อนจุดเริ่ม 50% = ขอบซ้าย input */
+    top: 53%;
+    transform: translateY(-50%);
+  left: var(--search-left);
   width: calc(var(--search-icon) + 8px);
   height: calc(var(--search-icon) + 8px);
   display:flex; align-items:center; justify-content:center;
@@ -105,7 +106,12 @@
   z-index: 1;
 }
 .actions .search .search__btn:hover{ background:#f9fafb; }
-.search__icon-img{ width: var(--search-icon); height: var(--search-icon); opacity:.9; display:block; }
+.search__icon-img{
+  width: var(--search-icon);
+  height: var(--search-icon);
+  opacity: .9;
+  display: block;
+}
 
 /* ===================== Responsive ===================== */
 @media (max-width: 1024px){
@@ -123,5 +129,62 @@
   :root{
     --search-w: 240px; --search-h: 38px; --search-icon: 16px;
     --search-left: 10px; --search-pad-l: 38px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .brand {
+    padding-left: 12px;
+  }
+  .brand__logo {
+    height: 36px;
+  }
+  .primary__list {
+    gap: 10px;
+    font-size: 0.98rem;
+  }
+  .actions {
+    padding-right: 8px;
+    gap: 6px;
+  }
+  :root {
+    --search-w: 140px; --search-h: 32px; --search-icon: 13px;
+    --search-left: 6px; --search-pad-l: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    padding-left: 2px;
+  }
+  .brand__logo {
+    height: 22px;
+  }
+  .primary__list {
+    gap: 4px;
+    font-size: 0.85rem;
+  }
+  .actions {
+    padding-right: 2px;
+    gap: 2px;
+  }
+  .icon-btn {
+    width: 28px;
+    height: 28px;
+  }
+  .icon-btn__img {
+    width: 16px;
+    height: 16px;
+  }
+  :root {
+    --search-w: 90px; --search-h: 24px; --search-icon: 10px;
+    --search-left: 2px; --search-pad-l: 18px;
   }
 }

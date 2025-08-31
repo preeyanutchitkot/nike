@@ -1,3 +1,783 @@
+/* ===== Street Inspire Responsive Scroll ===== */
+.street-inspire__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .street-inspire__grid {
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .street-card {
+    min-width: 260px;
+    flex: 0 0 auto;
+  }
+}
+/* ===== Featured (clean) ===== */
+.featured {
+  padding: 24px 0 60px;
+}
+
+.featured__title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 24px;
+  margin-top: 0;
+  padding-left: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ค่าเริ่มต้น: 2 คอลัมน์ตลอด */
+.featured__grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+  aspect-ratio: 18 / 20;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.card:hover .card__img { transform: scale(1.03); }
+
+.card__overlay {
+  position: absolute;
+  inset: auto 0 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 75%;
+  color: #fff;
+  font-size: 1.1rem;
+  padding-left: 16px;
+}
+
+.card__eyebrow { font-weight: 800; font-size: 1.1rem; }
+.card__title   { margin: 0; font-size: 1.1rem; font-weight: 800; }
+.card__copy    { margin: 0; line-height: 1.35; font-weight: 700; }
+
+.pill {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.12);
+  transition: transform .15s ease, background .2s ease;
+  box-shadow: none;
+}
+.pill:hover { transform: translateY(-1px); background: #f5f5f5; }
+
+/* ปรับระยะ/ตัวหนังสือบนจอเล็ก แต่ยังคง 2 คอลัมน์ไว้ */
+@media (max-width: 700px) {
+  .featured__title {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured__title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    padding-left: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .featured__grid  { gap: 10px; padding: 0 4px; }
+  .card__overlay   { max-width: 90%; font-size: 1rem; inset: auto 0 10px 10px; }
+  .pill            { height: 36px; padding: 0 12px; font-size: 1rem; }
+}
+
+/* เล็กมากจริง ๆ ค่อยลดเหลือ 1 คอลัมน์ */
+@media (max-width: 360px) {
+  .featured__grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Responsive grid for featured section */
+}
+
+/* --- Force street-inspire images to always be desktop size on all screens --- */
+
+/* Desktop only: 520px height */
+@media (min-width: 1025px) {
+  .street-inspire__grid .street-card__img,
+  .street-inspire__grid img {
+    height: 520px;
+    min-height: 520px;
+    max-height: 520px;
+    object-fit: cover;
+  }
+  .street-inspire__grid .street-card {
+    min-height: 520px;
+    height: 100%;
+  }
+}
+.featured__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .featured__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .card__img {
+    height: 110px;
+  }
+}
+.featured__title {
+  margin-top: 5em;
+}
+.grand-hero__img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 700px) {
+  .street-card__img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    min-height: 180px;
+    background: #fff;
+  }
+  .street-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 320px;
+    min-width: 80vw;
+    max-width: 90vw;
+    flex: 0 0 auto;
+  }
+}
+@media (max-width: 700px) {
+  .street-card__img {
+    object-fit: contain;
+    height: 100%;
+    min-height: 180px;
+    background: #fff;
+  }
+  .street-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 320px;
+    min-width: 80vw;
+    max-width: 90vw;
+    flex: 0 0 auto;
+  }
+}
+@media (max-width: 700px) {
+  .street-inspire__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 8px;
+  }
+  .street-card {
+    min-width: 80vw;
+    max-width: 90vw;
+    flex: 0 0 auto;
+    height: 320px;
+  }
+  .street-card__img {
+    height: 220px;
+  }
+}
+/* Street Inspire Card: Tall, Full Image, Horizontal Scroll on Mobile */
+.street-card__img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  display: block;
+  background: #eee;
+}
+.street-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 520px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+@media (max-width: 1024px) {
+  .street-card__img {
+    height: 380px;
+  }
+  .street-card {
+    min-height: 380px;
+  }
+}
+@media (max-width: 700px) {
+  .street-inspire__grid {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .street-card {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 80vw;
+    max-width: 90vw;
+    margin-right: 16px;
+    min-height: 260px;
+    height: 320px;
+  }
+  .street-card__img {
+    height: 260px;
+  }
+  .street-card:last-child {
+    margin-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .street-card__img {
+    height: 160px;
+  }
+  .street-card {
+    min-height: 160px;
+    height: 180px;
+  }
+}
+@media (max-width: 700px) {
+  .street-inspire__grid {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .street-card {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 80vw;
+    max-width: 90vw;
+    margin-right: 16px;
+    height: 320px;
+  }
+  .street-card:last-child {
+    margin-right: 0;
+  }
+}
+/* Street Inspire Card Image Responsive */
+.street-card__img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+  height: 260px;
+  min-height: 120px;
+  max-height: 340px;
+  background: #eee;
+}
+@media (max-width: 1024px) {
+  .street-card__img {
+    height: 200px;
+    max-height: 220px;
+  }
+}
+@media (max-width: 700px) {
+  .street-card__img {
+    height: 140px;
+    min-height: 80px;
+    max-height: 160px;
+  }
+}
+@media (max-width: 480px) {
+  .street-card__img {
+    height: 100px;
+    min-height: 60px;
+    max-height: 120px;
+  }
+}
+/* STREET INSPIRE Section Layout */
+.street-inspire {
+  margin-top: 48px;
+}
+.street-inspire__title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 24px;
+}
+@media (max-width: 700px) {
+  .street-inspire {
+    margin-top: 24px;
+  }
+  .street-inspire__title {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .street-inspire__title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+}
+/* HERO VIDEO Responsive */
+.hero__media {
+  width: 100vw;
+  height: 60vw;
+  min-height: 220px;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .hero__media {
+    height: 48vw;
+    max-height: 340px;
+  }
+}
+@media (max-width: 600px) {
+  .hero__media {
+    height: 38vw;
+    min-height: 120px;
+    max-height: 200px;
+  }
+}
+
+/* SPLIT SECTION Responsive */
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0 32px 0;
+}
+.split__content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.split__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.split__subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.split__desc {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+.split__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+@media (max-width: 700px) {
+  .split {
+    padding: 24px 0 16px 0;
+  }
+  .split__title {
+    font-size: 1.5rem;
+  }
+  .split__desc {
+    font-size: 1rem;
+  }
+  .split__buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/* FEATURED GRID Responsive */
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.card__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.card__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* height: 45%; */
+  background: none;
+  color: #fff;
+  padding: 18px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+  z-index: 1;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+.card__eyebrow {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.card__copy {
+  font-size: 0.98rem;
+}
+.pill {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.2s;
+  text-decoration: none;
+  font-family: inherit;
+}
+.pill:hover {
+  background: #333;
+}
+@media (max-width: 900px) {
+  .featured__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 8px;
+  }
+  .card__img {
+    height: 160px;
+  }
+  .card__overlay {
+    padding: 12px 8px 10px 8px;
+  }
+}
+@media (max-width: 600px) {
+  .featured__grid {
+    gap: 10px;
+    padding: 0 2px;
+  }
+  .card__img {
+    height: 110px;
+  }
+  .pill {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+/* STREET INSPIRE Responsive (already present, but improved) */
+.street-inspire__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.street-card__body {
+  padding: 18px 0 0 0;
+}
+.street-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.street-card__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.street-card__actions .pill {
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+.street-card__actions .pill:hover {
+  background: #333;
+}
+@media (max-width: 1024px) {
+  .street-inspire__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .street-inspire__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 10px;
+  }
+  .street-card__body {
+    padding: 14px 0 0 0;
+  }
+  .street-inspire__title {
+    font-size: 1.2rem !important;
+    margin-bottom: 14px !important;
+  }
+  .street-card img {
+    max-height: 220px;
+    object-fit: cover;
+  }
+  .street-card__title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .street-card__actions .pill {
+    font-size: 0.92rem;
+    padding: 7px 14px;
+  }
+}
+@media (max-width: 480px) {
+  .street-inspire__grid {
+    gap: 10px;
+    padding: 0 4px;
+  }
+  .street-card__body {
+    padding: 10px 0 0 0;
+  }
+  .street-card__title {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+  }
+  .street-card__actions .pill {
+    font-size: 0.82rem;
+    padding: 6px 8px;
+  }
+  .street-card img {
+    max-height: 140px;
+  }
+}
+/* Street Inspire Card Title and Actions Responsive */
+.street-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.street-card__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.street-card__actions .pill {
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+.street-card__actions .pill:hover {
+  background: #333;
+}
+
+@media (max-width: 700px) {
+  .street-card__title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .street-card__actions .pill {
+    font-size: 0.92rem;
+    padding: 7px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .street-card__title {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+  }
+  .street-card__actions .pill {
+    font-size: 0.82rem;
+    padding: 6px 8px;
+  }
+}
+/* Responsive pill button for street-inspire section */
+@media (max-width: 700px) {
+  .street-inspire__grid .pill {
+    font-size: 0.95rem !important;
+    padding: 7px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .street-inspire__grid .pill {
+    font-size: 0.85rem !important;
+    padding: 6px 10px !important;
+  }
+}
+/* Responsive styles for street-inspire section */
+.street-inspire__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.street-card__body {
+  padding: 18px 0 0 0;
+}
+
+@media (max-width: 1024px) {
+  .street-inspire__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .street-inspire__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 10px;
+  }
+  .street-card__body {
+    padding: 14px 0 0 0;
+  }
+  .street-inspire__title {
+    font-size: 1.2rem !important;
+    margin-bottom: 14px !important;
+  }
+  .street-card img {
+    max-height: 220px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .street-inspire__grid {
+    gap: 10px;
+    padding: 0 4px;
+  }
+  .street-card__body {
+    padding: 10px 0 0 0;
+  }
+  .street-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+  .street-card img {
+    max-height: 140px;
+  }
+}
+.street-inspire__grid img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+}
+.street-card__body {
+  padding: 18px 0 0 0 !important;
+  text-align: left !important;
+}
+}
+.street-inspire__title {
+  margin-left: 48px;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .featured__grid {
+    grid-template-columns: 1fr;
+    width: 100vw;
+    margin: 0;
+    gap: 0;
+  }
+  .card__overlay {
+    max-width: 96%;
+    inset: auto 0 8px 8px;
+    padding-left: 12px;
+    font-size: 1rem;
+  }
+  .pill {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 1rem;
+  }
+  .split__title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+  .split__desc {
+    font-size: 1rem;
+  }
+  .featured__title {
+    font-size: 1.1rem;
+    margin-left: 10px;
+  }
+}
 /* Section หลัก */
 .split {
   display: flex;
@@ -79,13 +859,14 @@
 
 /* สินค้าเด่น */
 /* ===== Featured ===== */
-.featured{ padding: 24px 20px 60px; }
-.featured__title{ max-width:1100px; margin:left 28px; font-size:24px; font-weight:800; }
+.featured{ padding: 24px 0 60px; }
+.featured__title{ max-width:1100px; margin-left:48px; font-size:24px; font-weight:800; }
 
 .featured__grid{
-  width: 100%;
-  max-width: none;           /* ✅ ยกเลิกการจำกัดความกว้าง 1100px */
-  margin: 0 auto;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;                    /* ✅ ไม่มีร่อง/ช่องว่างระหว่างการ์ด */
@@ -108,11 +889,13 @@
 .card__overlay{
   position:absolute; inset:auto 0 14px 14px;  /* bottom-left */
   display:flex; flex-direction:column; gap:10px; max-width:75%;
-  color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35);
+  color:#fff;
+  font-size: 1.25rem;
+  padding-left: 32px;
 }
-.card__eyebrow{ font-weight:800; font-size:14px; }
+.card__eyebrow{ font-weight:800; font-size:1.25rem; }
 .card__copy{ margin:0; line-height:1.35; font-weight:700; }
-.card__title{ margin:0; font-size:16px; font-weight:800; }
+.card__title{ margin:0; font-size:1.25rem; font-weight:800; }
 
 /* ปุ่มกลมแบบเม็ด (pill) */
 .pill{
@@ -120,15 +903,16 @@
   display:inline-flex; align-items:center; justify-content:center;
   height:40px; padding:0 18px; border-radius:999px;
   background:#fff; color:#111; font-weight:800; text-decoration:none;
-  box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(0,0,0,.12);
+  border:1px solid rgba(0,0,0,.12);
   transition: transform .15s ease, background .2s ease;
+  box-shadow: none;
 }
 .pill:hover{ transform: translateY(-1px); background:#f5f5f5; }
 
 /* ดาร์กพื้นหลังอ่านง่ายขึ้น (เฉพาะใบที่ตัวหนังสือยาว) */
 .card:nth-child(2) .card__overlay,
-.card:nth-child(4) .card__overlay{
-  text-shadow:0 3px 14px rgba(0,0,0,.5);
+ .card:nth-child(4) .card__overlay{
+  text-shadow: none;
 }
 
 /* ===== Responsive ===== */

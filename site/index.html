@@ -1,9 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Nike — Hero Clone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body data-page="home">
@@ -21,6 +25,7 @@
                autoplay muted loop playsinline
                poster="assets/hero-desktop.jpg"></video>
       </section>
+
 
       <!-- บล็อก VOMERO อยู่ใน main (ถูกที่) -->
       <section class="split">
@@ -45,7 +50,7 @@
     <article class="card">
       <img src="assets/G1.jpg" alt="จ่าฮุ้ง" class="card__img">
       <div class="card__overlay">
-        <span class="card__eyebrow">จ่าฮุ้ง</span>
+        <span class="card__eyebrow">Stripe Line Zip Tee</span>
         <a href="#" class="pill">เลือกซื้อ</a>
       </div>
     </article>
@@ -83,15 +88,81 @@
   </div>
 </section>
 
-    </main>
 
-    <!-- footer วางท้ายสุด -->
-    <div data-include="components/footer.html"></div>
+</section>
+<!-- Section: Street Inspiration -->
+<section class="street-inspire" style="margin-top:48px;">
+  <h2 class="street-inspire__title">แรงบันดาลใจจากสนาม สู่สไตล์สำหรับสายสตรีท</h2>
+  <div class="street-inspire__grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px; max-width:1400px; margin:0 auto;">
+    <!-- Card 1 -->
+    <div class="street-card">
+  <img src="assets/street1.jpg" alt="สไตล์ฮิปฮอปของยังโอม" style="width:100%; display:block; border-radius:0;">
+      <div class="street-card__body" style="padding:18px 0 0 0; text-align:center;">
+        <h3 class="street-card__title">สไตล์ฮิปฮอปของจีซู</h3>
+        <div class="street-card__actions">
+          <a href="#" class="pill">เลือกซื้อ</a>
+          <a href="#" class="pill">เลือกซื้อสไตล์</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="street-card">
+  <img src="assets/street2.jpg" alt="ซิกเนเจอร์สไตล์ของ O Thongthai" style="width:100%; display:block; border-radius:0;">
+      <div class="street-card__body" style="padding:18px 0 0 0; text-align:center;">
+        <h3 class="street-card__title">ซิกเนเจอร์สไตล์ของ Rose</h3>
+        <div class="street-card__actions">
+          <a href="#" class="pill">เลือกซื้อ</a>
+          <a href="#" class="pill">เลือกซื้อสไตล์</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="street-card">
+  <img src="assets/street3.jpg" alt="ลุคของ แบงค์ ศุภณัฐฏ์" style="width:100%; display:block; border-radius:0;">
+      <div class="street-card__body" style="padding:18px 0 0 0; text-align:center;">
+        <h3 class="street-card__title">ลุคของเจนนี่</h3>
+        <div class="street-card__actions">
+          <a href="#" class="pill">เลือกซื้อ</a>
+          <a href="#" class="pill">เลือกซื้อสไตล์</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <h2 class="featured__title">ห้ามพลาด</h2>
+    </section>
+
+<!-- Section: Grand Slam Hero -->
+<section class="grand-hero">
+  <div class="grand-hero__bg">
+    <div class="grand-hero__overlay"></div>
+    <div class="grand-hero__content grand-hero__content--bottom">
+      <h2 class="grand-hero__title">สไตล์แกรนด์สแลม</h2>
+      <p class="grand-hero__desc">ยืนหนึ่งในสนามเหมือนกับ Carlos Alcaraz ที่พร้อมลุยทุกความท้าทาย</p>
+      <a href="#" class="grand-hero__btn">เลือกซื้อสินค้าเทนนิสทั้งหมด</a>
+    </div>
+  </div>
+</main>
+
+</section>
+
+<div data-include="components/tennis-carousel.html"></div>
+<div data-include="components/icon-carousel.html"></div>
+
+  <!-- Section: Custom Image Carousel -->
+  <div data-include="components/custom-carousel.html"></div>
+
+  <!-- footer วางท้ายสุด -->
+  <hr style="margin:48px 0 32px 0;border:none;border-top:1.5px solid #eee;">
+  <div data-include="components/footer.html"></div>
+
   </div>
 
   <!-- scripts -->
   <script src="js/include.js" defer></script>
   <script src="js/active-link.js" defer></script>
   <script src="js/header.js" defer></script>
+  <script src="js/icon-carousel.js" defer></script>
+  <script src="js/tennis-carousel.js" defer></script>
 </body>
 </html>
