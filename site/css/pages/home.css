@@ -1,3 +1,73 @@
+/* === PATCH: Street Inspire - Desktop Show Full Image, No Crop (2025-09-01) === */
+@media (min-width:901px) {
+  .street-inspire__grid .street-card__img,
+  .street-inspire__grid img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #fff !important;
+    display: block;
+    border-radius: 0;
+    max-height: 520px;
+  }
+  .street-inspire__grid .street-card {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
+/* === END PATCH === */
+/* === PATCH: Street Inspire - Always Horizontal Scroll on Mobile, Grid on Desktop (2025-09-01) === */
+@media (max-width:900px) {
+  .street-inspire__grid {
+    display: flex !important;
+    flex-wrap: nowrap;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px !important;
+    padding: 0 8px 12px 8px !important;
+    white-space: nowrap !important;
+    max-width: 100vw;
+  }
+  .street-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 80vw !important;
+    max-width: 90vw !important;
+    flex: 0 0 auto;
+    margin-right: 0 !important;
+    height: auto !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    background: #fff;
+  }
+  .street-card__img {
+    width: 100% !important;
+    height: 70vw !important;
+    min-height: 180px !important;
+    max-height: 90vw !important;
+    aspect-ratio: 3/4 !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    background: #eee !important;
+    display: block;
+    border-radius: 0;
+  }
+  .street-card:last-child { margin-right: 0 !important; }
+}
+@media (min-width:901px) {
+  .street-inspire__grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+    gap: 32px !important;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+}
+/* === END PATCH === */
 /* ===== Street Inspire Responsive Scroll ===== */
 .street-inspire__grid {
   display: grid;
